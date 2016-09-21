@@ -1,0 +1,26 @@
+{
+  "name": "parity-parser",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Parser for parity league stats",
+  "author": "Kevin Hughes <kevinhughes27@gmail.com>",
+  "homepage": "http://github.com/kevinhughes27/parity-parser",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kevinhughes27/parity-parser"
+  },
+  "main": "lib/parser.js",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "google-auth-library": "^0.9.6",
+    "googleapis": "^13.0.0",
+    "mocha": "^3.0.2",
+    "mocha-sinon": "^1.1.4",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "deploy": "node bin/deploy_to_google.js"
+  }
+}
