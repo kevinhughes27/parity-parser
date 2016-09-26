@@ -195,12 +195,6 @@ describe("Parser", function() {
     expect(output['Jill']['Drops']).to.equal(1);
   });
 
-  it("empty array cells are ignored", function() {
-    input = [["", "", "POINT", "Jill"]];
-    output = parser(input);
-    expect(output['Jill']['Goals']).to.equal(1);
-  });
-
   it("extra spaces are ignored", function() {
     input = ["    POINT\tJill"];
     output = parser(input);
