@@ -105,13 +105,13 @@ describe("Parser", function() {
   });
 
   it("parses stat: OPointsFor", function() {
-    input = ["Direction\t<<<<<<", "POINT\tJill", "1\tJill"];
+    input = ["Direction\t<<<<<<", "POINT\tJill", "O+\tJill\tD-\tJane"];
     output = parser(input);
     expect(output['Jill']['OPointsFor']).to.equal(1);
   });
 
   it("parses stat: DPointsAgainst", function() {
-    input = ["Direction\t<<<<<<", "POINT\tJill", "1\tJill", "-1\tJane"];
+    input = ["Direction\t<<<<<<", "POINT\tJill", "O+\tJill\tD-\tJane"];
     output = parser(input);
     expect(output['Jane']['DPointsAgainst']).to.equal(1);
   });
@@ -122,10 +122,8 @@ describe("Parser", function() {
       "Drop\tJill\tPass\tBob",
       "Direction\t>>>>>>",
       "POINT\tMike\tPass\tJane",
-      "-1\tJill",
-      "-1\tBob",
-      "+1\tMike",
-      "+1\tJane",
+      "O-\tJill\tD+\tMike",
+      "O-\tBob\tD+\tJane"
     ];
 
     output = parser(input);
@@ -139,10 +137,8 @@ describe("Parser", function() {
       "Drop\tJill\tPass\tBob",
       "Direction\t>>>>>>",
       "POINT\tMike\tPass\tJane",
-      "-1\tJill",
-      "-1\tBob",
-      "+1\tMike",
-      "+1\tJane",
+      "O-\tJill\tD+\tMike",
+      "O-\tBob\tD+\tJane"
     ];
 
     output = parser(input);
@@ -157,16 +153,12 @@ describe("Parser", function() {
       "Drop\tJill\tPass\tBob",
       "Direction\t>>>>>>",
       "POINT\tMike\tPass\tJane",
-      "-1\tJill",
-      "-1\tBob",
-      "+1\tMike",
-      "+1\tJane",
+      "O-\tJill\tD+\tMike",
+      "O-\tBob\tD+\tJane",
       "Direction\t<<<<<<",
       "POINT\tJill\tPass\tBob\tJill",
-      "+1\tJill",
-      "+1\tBob",
-      "-1\tMike",
-      "-1\tJane",
+      "O+\tJill\tD-\tMike",
+      "O+\tBob\tD-\tJane",
       "Direction\t>>>>>>",
       "Throw Away\tJane",
       "Direction\t<<<<<<"
