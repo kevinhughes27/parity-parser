@@ -72,6 +72,16 @@ describe("Parser", function() {
     expect(output['Bob']['Completions']).to.equal(2);
   });
 
+  it("parses stat: Completions (jagged array)", function() {
+    input = [
+      "Direction\t>>>>>>\tPOINT\tJill\tPass\tBob",
+      "Direction\t>>>>>>\tPOINT\tJill\tPass\tBob\tPass\tJim\tPass\tBob\tPass\tJim"
+    ];
+
+    output = parser(input);
+    expect(output['Bob']['Completions']).to.equal(3);
+  });
+
   it("parses stat: Catches 1", function() {
     input = ["Direction\t>>>>>>\tPOINT\tJill\tPass\tBob"];
     output = parser(input);
