@@ -1,4 +1,4 @@
-parity-parser [![Build Status](https://travis-ci.org/kevinhughes27/parity-parser.svg)](https://travis-ci.org/kevinhughes27/parity-parser)
+parity-parser [![Build Status](https://travis-ci.org/kevinhughes27/parity-parser.svg)](https://travis-ci.org/kevinhughes27/parity-server)
 =============
 
 Deprecated. I am migrating out of google docs into a full application [here](https://github.com/kevinhughes27/parity-parser)
